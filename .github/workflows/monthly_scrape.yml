@@ -25,9 +25,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: List Files (Diagnostic)
-        run: ls -R
-
       - name: Run Scraper
         run: python agents.py
 
@@ -36,5 +33,10 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add market_ledger.json
-          git commit -m "Automated: Monthly intelligence update"
-          git push
+          # Check for changes: only commit and push if the file was modified
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Automated: Monthly intelligence update"
+            git push
+          else
+            echo "No changes detected. Skipping commit and push."
+          fi
