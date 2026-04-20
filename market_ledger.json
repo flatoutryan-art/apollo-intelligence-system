@@ -1,0 +1,16 @@
+[
+    {
+        "date": "2026-04-20,
+        "total_deals": 18,
+        "capacity_mwh": 3090000,
+        "source": "expert_validated",
+        "notes": "Base-level snapshot from initial project data."
+    },
+    {
+        "date": "2026-04-20",
+        "total_deals": 19,
+        "capacity_mwh": 3150000,
+        "source": "automated_agent",
+        "notes": "Agent-derived market update."
+    }
+]
