@@ -29,7 +29,7 @@ jobs:
         run: ls -R
 
       - name: Run Scraper
-        run: python main.py
+        run: run: python <filename>.py
 
       - name: Commit changes
         run: |
