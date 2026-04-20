@@ -4,3 +4,4 @@ pandas
 anthropic
 python-dotenv
 plotly
+tenacity
