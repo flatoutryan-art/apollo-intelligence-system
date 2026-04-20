@@ -6,6 +6,9 @@ on:
     - cron: '0 0 1 * *'
   workflow_dispatch: # Allows you to run it manually anytime
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,7 +23,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt # Make sure you have a requirements.txt file!
+          pip install -r requirements.txt
+
+      - name: List Files (Diagnostic)
+        run: ls -R
 
       - name: Run Scraper
         run: python main.py
